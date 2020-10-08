@@ -1,5 +1,7 @@
-let ourForm = document.getElementById("ourForm");
-let addTodoInputField = document.getElementById("addTodoInputField");
+let ourForm = document.querySelector("form");
+let addTodoInputField = document.querySelector("input");
+
+addTodoInputField.focus();
 
 ourForm.addEventListener("click", function (e) {
   e.preventDefault();
@@ -7,6 +9,9 @@ ourForm.addEventListener("click", function (e) {
 });
 
 function createItem(x) {
+  if (x == "") {
+    return;
+  }
   let ourHTML = `<li>${x} <button onclick="deleteItem(this)">Delete</button></li>`;
   todoList.insertAdjacentHTML("beforeend", ourHTML);
   addTodoInputField.value = "";
@@ -15,4 +20,5 @@ function createItem(x) {
 
 function deleteItem(elementToDelete) {
   elementToDelete.parentElement.remove();
+  addTodoInputField.focus();
 }
