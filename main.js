@@ -12,8 +12,8 @@ function createItem(newItem) {
   if (newItem == "") {
     return;
   }
-  let ourHTML = `<li>${newItem} <button onclick="deleteItem(this)">Delete</button></li>`;
-  todoList.insertAdjacentHTML("beforeend", ourHTML);
+  let printItems = `<li>${newItem} <button onclick="deleteItem(this)">Delete</button></li>`;
+  todoList.insertAdjacentHTML("beforeend", printItems);
   addTodoInputField.value = "";
   addTodoInputField.focus();
 }
