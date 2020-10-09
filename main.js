@@ -1,18 +1,18 @@
-let ourForm = document.querySelector("form");
+let addTodoForm = document.querySelector("form");
 let addTodoInputField = document.querySelector("input");
 
 addTodoInputField.focus();
 
-ourForm.addEventListener("click", function (e) {
+addTodoForm.addEventListener("click", function (e) {
   e.preventDefault();
   createItem(addTodoInputField.value);
 });
 
-function createItem(x) {
-  if (x == "") {
+function createItem(newItem) {
+  if (newItem == "") {
     return;
   }
-  let ourHTML = `<li>${x} <button onclick="deleteItem(this)">Delete</button></li>`;
+  let ourHTML = `<li>${newItem} <button onclick="deleteItem(this)">Delete</button></li>`;
   todoList.insertAdjacentHTML("beforeend", ourHTML);
   addTodoInputField.value = "";
   addTodoInputField.focus();
