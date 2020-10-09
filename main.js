@@ -3,8 +3,8 @@ let addTodoInputField = document.querySelector("input");
 
 addTodoInputField.focus();
 
-addTodoForm.addEventListener("click", function (e) {
-  e.preventDefault();
+addTodoForm.addEventListener("click", function (blockDefault) {
+  blockDefault.preventDefault();
   createItem(addTodoInputField.value);
 });
 
